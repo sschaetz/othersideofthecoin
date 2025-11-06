@@ -1,0 +1,11 @@
+[project]
+name = "othersideofthecoin"
+version = "0.0.1"
+description = "The other side of the coin"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.121.0",
+    "uvicorn>=0.38.0",
+    "requests>=2.32.5",
+]
+
