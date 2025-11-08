@@ -1,6 +1,7 @@
 import requests
 import json
 import os
+import time
 
 SYSTEM_PROMPT = """
 You are integrated into a tiny website "the other side of the coin" that allows 
@@ -12,6 +13,8 @@ is: "{front_side}"
 
 def compute_coin(front_side: str):
   auth_key = os.getenv("OPENROUTER_API_KEY")
+  time.sleep(2)
+
   response = requests.post(
     url="https://openrouter.ai/api/v1/chat/completions",
       headers={
@@ -21,7 +24,7 @@ def compute_coin(front_side: str):
     },
     data=json.dumps({
       #"model": "google/gemini-2.5-pro",
-      "model": "openai/gpt-4o",
+      "model": "openai/gpt-5-chat",
       "messages": [
         {
           "role": "user",

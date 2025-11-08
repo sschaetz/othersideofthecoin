@@ -5,17 +5,40 @@
   <title>Other side of the coin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script type="module" src="/static/app.js"></script>
+<style>
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+</style>
 </head>
 <body>
   <main>
-    <h1>Other side of the coin</h1>
-
+    <h1 class="center">Other Side of the Coin</h1>
+	<video id="coin-anim"
+	       src="/static/coin.webm"
+	       poster="/static/coin.webp"
+	       preload="auto"
+	       playsinline
+	       muted
+	       style="width:160px; height:160px; display: block; margin-left: auto; margin-right: auto;">
+	</video>
     <section class="post-coin">
       <form id="post-coin-form">
-        <input type="text" id="post-coin" placeholder="" size="50" required />
-        <button type="submit">Send</button>
+        <p class="center">
+          <!--<input type="text" id="post-coin" placeholder="" size="50" required />-->
+          <textarea id="post-coin" name="post-coin" cols="40" rows="3"></textarea>
+        </p>
+        <p class="center">
+          <button type="submit">Send</button>
+        </p>
       </form>
-      <pre id="coin-result" class="result"></pre>
+      <p class="center" id="coin-result" class="result"></p>
     </section>
   </main>
 </body>
